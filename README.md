@@ -2,7 +2,7 @@
 
 Minimalistic activity indicator (loading icon) in shape of a spinning wheel.
 
-# Instalation
+# Installation
 
 `yarn add vue-activity-indicator`
 
