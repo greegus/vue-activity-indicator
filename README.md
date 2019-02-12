@@ -1,79 +1,73 @@
 # VueActivityIndicator
 
-[![npm](https://img.shields.io/npm/v/vue-activity-indicator.svg)](https://www.npmjs.com/package/vue-activity-indicator) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+Minimalistic activity indicator (loading icon) in shape of spinning wheel.
 
-> A Vue.js Plugin
+# Instalation
 
-## Installation
+Add to your project dependencies.
 
-```bash
-npm install --save vue-activity-indicator
+`yarn add vue-activity-indicator`
+
+## Make it available globaly...
+
+Add to the main app file
+
+```javascript
+import ActivityIndicator from 'vue-activity-indicator'
+Vue.use(ActivityIndicator)
 ```
 
-## Usage
-
-### Bundler (Webpack, Rollup)
-
-```js
-import Vue from 'vue'
-import VueActivityIndicator from 'vue-activity-indicator'
-// You need a specific loader for CSS files like https://github.com/webpack/css-loader
-import 'vue-activity-indicator/dist/vue-activity-indicator.css'
-
-Vue.use(VueActivityIndicator)
-```
-
-### Browser
+...and then use directly
 
 ```html
-<!-- Include after Vue -->
-<!-- Local files -->
-<link rel="stylesheet" href="vue-activity-indicator/dist/vue-activity-indicator.css"></link>
-<script src="vue-activity-indicator/dist/vue-activity-indicator.js"></script>
-
-<!-- From CDN -->
-<link rel="stylesheet" href="https://unpkg.com/vue-activity-indicator/dist/vue-activity-indicator.css"></link>
-<script src="https://unpkg.com/vue-activity-indicator"></script>
+<activity-indicator />
 ```
 
-## Development
+## ...Or import it directly into components
 
-### Launch visual tests
+```javascript
+import ActivityIndicator from 'vue-activity-indicator'
 
-```bash
-npm run dev
+// ...
+
+// Add localy to the list of used components
+export default {
+  components: {
+    ActivityIndicator
+  }
+}
 ```
 
-### Launch Karma with coverage
-
-```bash
-npm run dev:coverage
+```html
+<ActivityIndicator />
 ```
 
-### Build
+# Attributes
 
-Bundle the js and css of to the `dist` folder:
+### `size` (String | Number)
+Size of the icon in pixels or one of the named sized (`large`, `small`, `normal`). 
 
-```bash
-npm run build
-```
+*Default: `"normal"`*
+
+### `stroke` (Number)
+Width of the icons stroke. If not defined, it will be resolved based on the size.
+
+*Default: `undefined`*
+
+### `color` (String)
+Color of the icon. An CSS color value.
+
+*Default: `"black"`*
+
+### `opacity` (Number)
+An opacity of the icon, in range from 0 to 1.
+
+*Default: `.35`*
 
 
-## Publishing
 
-The `prepublish` hook will ensure dist files are created before publishing. This
-way you don't need to commit them in your repository.
 
-```bash
-# Bump the version first
-# It'll also commit it and create a tag
-npm version
-# Push the bumped package and tags
-git push --follow-tags
-# Ship it 🚀
-npm publish
-```
 
-## License
 
-[MIT](http://opensource.org/licenses/MIT)
+
+
