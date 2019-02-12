@@ -1,6 +1,6 @@
 # VueActivityIndicator
 
-Minimalistic activity indicator (loading icon) in shape of spinning wheel.
+Minimalistic activity indicator (loading icon) in shape of a spinning wheel.
 
 # Instalation
 
