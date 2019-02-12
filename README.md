@@ -34,7 +34,7 @@ export default {
 ```
 
 ```html
-  <ActivityIndicator />
+<ActivityIndicator />
 ```
 
 # Attributes
@@ -55,7 +55,7 @@ Color of the icon. An CSS color value.
 *Default: `"black"`*
 
 ### `opacity` (Number)
-An opacity of the icon, in range from 0 to 1.
+Opacity of the icon, in range from 0 to 1.
 
 *Default: `.35`*
 
