@@ -40,7 +40,7 @@ export default {
 # Attributes
 
 ### `size` (String | Number)
-Size of the icon in pixels or one of the named sized (`large`, `small`, `normal`). 
+Size of the icon in pixels or one of the named sizes (`large`, `small`, `normal`). 
 
 *Default: `"normal"`*
 
