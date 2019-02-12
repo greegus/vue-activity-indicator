@@ -26,9 +26,6 @@ Vue.use(ActivityIndicator)
 ```javascript
 import ActivityIndicator from 'vue-activity-indicator'
 
-// ...
-
-// Add localy to the list of used components
 export default {
   components: {
     ActivityIndicator
@@ -37,7 +34,7 @@ export default {
 ```
 
 ```html
-<ActivityIndicator />
+  <ActivityIndicator />
 ```
 
 # Attributes
