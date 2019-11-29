@@ -5,7 +5,7 @@
       <circle :cx="radius" :cy="radius" :r="radius - realStroke" fill="black"/>
     </mask>
 
-    <g :mask="`url(${maskPath})`" :fill="color" class="_icon">
+    <g :mask="`url(${getLocation()}#${maskName})`" :fill="color" class="_icon">
       <rect :width="realSize" :height="realSize" :opacity="opacity * .35"/>
       <path :d="`M0,0 L${realSize},0 L${radius},${radius} Z`" :opacity="opacity"/>
     </g>
@@ -61,11 +61,13 @@ export default {
     radius() {
       return this.realSize / 2
     },
+  },
 
-    maskPath() {
-      return `${window.location.href || ''}#${this.maskName}`
+  methods: {
+    getLocation() {
+      return window.location.href
     }
-  }
+  },
 }
 </script>
 
