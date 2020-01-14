@@ -1,20 +1,13 @@
 <template>
   <svg class="activity-indicator" xmlns="http://www.w3.org/2000/svg" :viewBox="`0 0 ${realSize} ${realSize}`" :width="realSize" :height="realSize">
-    <mask :id="maskName">
-      <circle :cx="radius" :cy="radius" :r="radius" fill="white"/>
-      <circle :cx="radius" :cy="radius" :r="radius - realStroke" fill="black"/>
-    </mask>
-
-    <g :mask="`url(${getLocation()}#${maskName})`" :fill="color" class="_icon">
-      <rect :width="realSize" :height="realSize" :opacity="opacity * .35"/>
-      <path :d="`M0,0 L${realSize},0 L${radius},${radius} Z`" :opacity="opacity"/>
+    <g fill="transparent" class="activity-indicator--icon">
+      <circle :cx="radius" :cy="radius" :r="radius - halfStroke" :stroke-width="realStroke" :stroke="color" :opacity="opacity * .35" />
+      <path :d="`M ${halfStroke} ${radius} Q ${halfStroke * 1.5} ${halfStroke * 1.5} ${radius} ${halfStroke}`" :stroke-width="realStroke" :stroke="color" :opacity="opacity" />
     </g>
   </svg>
 </template>
 
 <script>
-let instanceId = 0
-
 const namedSizes = {
   small: {size: 16, stroke: 3},
   normal: {size: 24, stroke: 3.5},
@@ -43,12 +36,6 @@ export default {
     },
   },
 
-  data() {
-    return {
-      maskName: `_activity-indicator-mask-${instanceId++}`
-    }
-  },
-
   computed: {
     realSize() {
       return (namedSizes[this.size] && namedSizes[this.size].size) || this.size
@@ -58,21 +45,19 @@ export default {
       return this.stroke || (namedSizes[this.size] && namedSizes[this.size].stroke) || this.realSize / 10
     },
 
+    halfStroke() {
+      return this.realStroke / 2
+    },
+
     radius() {
       return this.realSize / 2
     },
-  },
-
-  methods: {
-    getLocation() {
-      return window.location.href
-    }
-  },
+  }
 }
 </script>
 
 <style scoped>
-._icon {
+.activity-indicator--icon {
   animation: loading-icon__animation .65s infinite linear;
   transform-origin: 50% 50%;
 }
