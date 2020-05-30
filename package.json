@@ -1,6 +1,6 @@
 {
   "name": "vue-activity-indicator",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Activity indicating (loading) icon in shape of a spinning wheel",
   "author": "Matúš Duchoň <matus.duchon@gmail.com>",
   "main": "dist/vue-activity-indicator.common.js",
