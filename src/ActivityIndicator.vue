@@ -9,9 +9,9 @@
 
 <script>
 const namedSizes = {
-  small: {size: 16, stroke: 3},
-  normal: {size: 24, stroke: 3.5},
-  large: {size: 48, stroke: 5}
+  small: { size: 16, stroke: 3 },
+  normal: { size: 24, stroke: 3.5 },
+  large: { size: 48, stroke: 5 }
 }
 
 export default {
@@ -32,8 +32,8 @@ export default {
 
     opacity: {
       type: Number,
-      default: .35
-    },
+      default: 0.35
+    }
   },
 
   computed: {
@@ -51,12 +51,17 @@ export default {
 
     radius() {
       return this.realSize / 2
-    },
+    }
   }
 }
 </script>
 
 <style scoped>
+.activity-indicator {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .activity-indicator--icon {
   animation: loading-icon__animation .65s infinite linear;
   transform-origin: 50% 50%;
