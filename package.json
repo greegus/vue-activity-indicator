@@ -8,9 +8,11 @@
   "browser": "dist/vue-activity-indicator.js",
   "unpkg": "dist/vue-activity-indicator.js",
   "style": "dist/vue-activity-indicator.css",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "types"
   ],
   "keywords": [
     "activity indicator",

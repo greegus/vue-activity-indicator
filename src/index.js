@@ -1,7 +1,7 @@
 import ActivityIndicator from './ActivityIndicator.vue'
 
 const plugin = {
-  install (Vue, options) {
+  install (Vue) {
     Vue.component('activity-indicator', ActivityIndicator)
   }
 }
